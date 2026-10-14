@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading App - Select Class</title>
+    <style>
+        /* Base page styling with a clean gradient */
+        body {
+            font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Container for content structure */
+        .container {
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Reading illustration layout */
+        .app-hero-image {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 12px;
+        }
+
+        /* Elegant Decorative Header Styling */
+        .title {
+            color: #b71c1c;
+            font-size: 36px;
+            font-weight: 800;
+            margin: 0 0 40px 0;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* Creative underline banner effect */
+        .title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #e53935, #b71c1c);
+            margin: 12px auto 0;
+            border-radius: 10px;
+        }
+
+        /* Modernized Flexible Grid replacing the stiff table row */
+        .class-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Styled Interactive Card Links */
+        .class-card {
+            background: #fdfdfd;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 16px;
+            padding: 25px 15px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        /* Custom reading emojis from the CSS layer for visuals */
+        .class-card::before {
+            content: '📚';
+            font-size: 28px;
+            margin-bottom: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Unique book decoration variations for each grade */
+        .class-card:nth-child(2)::before { content: '📖'; }
+        .class-card:nth-child(3)::before { content: '🔖'; }
+        .class-card:nth-child(4)::before { content: '✍️'; }
+        .class-card:nth-child(5)::before { content: '💻'; }
+
+        /* Typography inside cards */
+        .class-name {
+            color: #444444;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        /* Top red accent bar that expands on hover */
+        .class-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #e53935, #b71c1c);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        /* Premium Hover & Animation States */
+        .class-card:hover {
+            transform: translateY(-6px);
+            background: #ffffff;
+            box-shadow: 0 15px 30px rgba(183, 28, 28, 0.1);
+            border-color: rgba(183, 28, 28, 0.2);
+        }
+
+        .class-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .class-card:hover::before {
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        .class-card:hover .class-name {
+            color: #b71c1c;
+        }
+
+        /* Active touch feedback */
+        .class-card:active {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- The reading-themed image integrated directly into your app layout -->
+        <img src="https://freepik.com" alt="Reading App Concept" class="app-hero-image">
+
+        <h1 class="title">Select your class</h1>
+
+        <div class="class-grid">
+            <a href="pageno4.html" class="class-card">
+                <span class="class-name">STD 5TH</span>
+            </a>
+            <a href="pageno4.html" class="class-card">
+                <span class="class-name">STD 6TH</span>
+            </a>
+            <a href="pageno4.html" class="class-card">
+                <span class="class-name">STD 7TH</span>
+            </a>
+            <a href="pageno4.html" class="class-card">
+                <span class="class-name">STD 8TH</span>
+            </a>
+            <a href="pageno4.html" class="class-card">
+                <span class="class-name">STD 9TH</span>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading App - Select Subject</title>
+    <style>
+        /* Modern student-centric interface foundation */
+        body {
+            font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #f5f2fa 0%, #e8e3f0 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Clean unified app container mimicking a school tablet app */
+        .container {
+            width: 100%;
+            max-width: 850px;
+            text-align: center;
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(75, 44, 109, 0.05);
+        }
+
+        /* Bold, encouraging header styling */
+        .title {
+            color: #4b2c6d;
+            font-size: 34px;
+            font-weight: 800;
+            margin: 0 0 35px 0;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* Dynamic underline banner effect under title text */
+        .title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 5px;
+            background: linear-gradient(90deg, #ff7f50, #4b2c6d);
+            margin: 12px auto 0;
+            border-radius: 10px;
+        }
+
+        /* Flexible responsive schedule grid layout */
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Interactive daily schedule card anchor item */
+        .schedule-card {
+            background: #fdfdfd;
+            border: 2px solid rgba(75, 44, 109, 0.06);
+            border-radius: 20px;
+            padding: 25px 20px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* Dynamic calendar indicator badge styling */
+        .day-badge {
+            background-color: #f0ebf7;
+            color: #4b2c6d;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        /* Target language subject text variables */
+        .subject-name {
+            color: #ff7f50;
+            font-size: 24px;
+            font-weight: 800;
+            text-transform: capitalize;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .action-hint {
+            color: #888888;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        /* Top colored indicator lining expanding symmetrically on interactive track */
+        .schedule-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #ff7f50, #ff5722);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        /* Purple theme color override for specific rows */
+        .schedule-card.purple-theme::after {
+            background: linear-gradient(90deg, #4b2c6d, #673ab7);
+        }
+        .schedule-card.purple-theme .subject-name {
+            color: #4b2c6d;
+        }
+
+        /* Bouncy tactile interactive feedback triggers */
+        .schedule-card:hover {
+            transform: translateY(-6px);
+            background: #ffffff;
+            box-shadow: 0 15px 30px rgba(75, 44, 109, 0.1);
+            border-color: rgba(75, 44, 109, 0.15);
+        }
+
+        .schedule-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .schedule-card:hover .day-badge {
+            background-color: #4b2c6d;
+            color: #ffffff;
+        }
+
+        .schedule-card.purple-theme:hover .day-badge {
+            background-color: #ff7f50;
+            color: #ffffff;
+        }
+
+        /* Mobile device compatibility fallback layout rules */
+        @media (max-width: 500px) {
+            .schedule-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="title">Select your Subject</h1>
+
+        <div class="schedule-grid">
+            <!-- Monday & Tuesday Block -->
+            <a href="pageno5.html" class="schedule-card purple-theme">
+                <span class="day-badge">Mon & Tue</span>
+                <span class="subject-name">English</span>
+                <span class="action-hint">Tap to start reading 📖</span>
+            </a>
+
+            <!-- Wednesday & Thursday Block -->
+            <a href="pageno6.html" class="schedule-card">
+                <span class="day-badge">Wed & Thu</span>
+                <span class="subject-name">Hindi</span>
+                <span class="action-hint">Tap to start reading 📚</span>
+            </a>
+
+            <!-- Friday & Saturday Block -->
+            <a href="pageno7.html" class="schedule-card purple-theme">
+                <span class="day-badge">Fri & Sat</span>
+                <span class="subject-name">Marathi</span>
+                <span class="action-hint">Tap to start reading 🔖</span>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girls' English Medium School - Login & Signup</title>
+    <style>
+        /* Base configuration aligned with school aesthetic */
+        body {
+            font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #f5f2fa 0%, #e8e3f0 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Two-column responsive card container */
+        .container {
+            display: flex;
+            gap: 30px;
+            max-width: 850px;
+            width: 100%;
+        }
+
+        /* Interactive login cards built for kids */
+        .card {
+            background-color: #ffffff;
+            border-radius: 24px;
+            padding: 40px 30px;
+            flex: 1;
+            box-shadow: 0 15px 35px rgba(75, 44, 109, 0.06);
+            border: 1px solid rgba(75, 44, 109, 0.04);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* Top colorful visual border to keep sections separate */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #4b2c6d, #673ab7);
+        }
+
+        /* Set different colored accent bar for signup card */
+        .card.signup-card::before {
+            background: linear-gradient(90deg, #ff7f50, #ff5722);
+        }
+
+        /* Decorative illustration badges on title headers */
+        h2 {
+            margin-top: 0;
+            font-size: 26px;
+            font-weight: 800;
+            color: #4b2c6d;
+            letter-spacing: -0.5px;
+        }
+
+        .card.signup-card h2 {
+            color: #ff7f50;
+        }
+
+        p {
+            color: #666666;
+            font-size: 14px;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-weight: 700;
+            font-size: 13px;
+            margin-bottom: 6px;
+            color: #555555;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Modernized student input frames */
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e1daeb;
+            border-radius: 12px;
+            box-sizing: border-box;
+            background-color: #faf9fc;
+            font-size: 14px;
+            font-family: inherit;
+            color: #333333;
+            transition: all 0.3s ease;
+        }
+
+        /* Bright interactive focus glow states */
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #4b2c6d;
+            background-color: #ffffff;
+            box-shadow: 0 0 0 4px rgba(75, 44, 109, 0.1);
+        }
+
+        .card.signup-card input:focus {
+            border-color: #ff7f50;
+            box-shadow: 0 0 0 4px rgba(255, 127, 80, 0.15);
+        }
+
+        /* Bouncy action pills */
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #4b2c6d, #673ab7);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 6px 15px rgba(75, 44, 109, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .card.signup-card button {
+            background: linear-gradient(135deg, #ff7f50, #ff5722);
+            box-shadow: 0 6px 15px rgba(255, 127, 80, 0.25);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(75, 44, 109, 0.3);
+        }
+
+        .card.signup-card button:hover {
+            box-shadow: 0 8px 20px rgba(255, 127, 80, 0.4);
+        }
+
+        /* Direct shortcut reading button styling */
+        .direct-reading-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #673ab7;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .direct-reading-link:hover {
+            color: #ff7f50;
+            text-decoration: underline;
+        }
+
+        .terms {
+            font-size: 12px;
+            color: #888888;
+            margin-top: 15px;
+            line-height: 1.4;
+        }
+
+        /* Hover animation on whole card block */
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Mobile device fallback stack layout */
+        @media (max-width: 650px) {
+            .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Log In Section -->
+    <div class="card login-card">
+        <h2>Welcome Back! 📚</h2>
+        <p>Log in to continue your daily language training journey.</p>
+        <form onsubmit="return false;">
+            <div class="form-group">
+                <label>Email or Username</label>
+                <input type="text" placeholder="Enter your email or username" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit">Log In</button>
+            <center>
+                <a href="pageno3.html" class="direct-reading-link">✨ Direct Entry to Reading App</a>
+            </center>
+        </form>
+    </div>
+
+    <!-- Sign Up Section -->
+    <div class="card signup-card">
+        <h2>New Reader? 🚀</h2>
+        <p>Create your profile and start learning your words today.</p>
+        <form onsubmit="return false;">
+            <div class="form-group">
+                <label>Student Name</label>
+                <input type="text" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label>Create Password</label>
+                <input type="password" placeholder="Choose a secure password" required>
+            </div>
+            <p class="terms">By registering an account, you agree to follow our daily reading app rules.</p>
+            <button type="submit">Create Account</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>
